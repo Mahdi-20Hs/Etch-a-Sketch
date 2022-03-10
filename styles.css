@@ -1,0 +1,52 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  height: 600px;
+}
+
+h1{
+  font-size: 70px;
+}
+
+.content{
+  width: 100%;
+  display: flex;
+  flex: 1;
+  gap: 100px;
+}
+
+.side-bar{
+  background-color: coral;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 200px;
+  border-radius: 10px;
+}
+#color{
+  align-self: center;
+}
+.range-label{
+  text-align: center;
+}
+
+.main{
+  background-color: coral;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  padding: 10px;
+}
