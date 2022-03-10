@@ -17,23 +17,34 @@ for(let i = 0; i <= (range.min * range.min); i++){
   main.append(i)
 }
 
-
+function changeBgColor(element){
+  element.setAttribute('style', 'background-color: orange; color:black; transition-duration: 0.3s');
+}
+function returnBgColor(element){
+  element.setAttribute('style', 'background-color: transparent; color:white; transition-duration: 0.3s')
+}
 color.addEventListener('change', function(){
   mode.textContent = 'Mode: Color'
   colorValue = color.value;
-  changingColor= false
+  changingColor= false;
+  returnBgColor(eraser);
+  returnBgColor(rainbow);
 })
 
 eraser.addEventListener('click', function(){
   colorValue = '#FFFFFF';
   mode.textContent = 'Mode: Eraser'
   changingColor= false;
+  changeBgColor(eraser);
+  returnBgColor(rainbow);
 })
 
 
 rainbow.addEventListener('click', function() {
   changingColor=true;
-  mode.textContent = 'Mode: Rainbow'
+  mode.textContent = 'Mode: Rainbow';
+  changeBgColor(rainbow);
+  returnBgColor(eraser);
 })
 
 
