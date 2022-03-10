@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans">
   <link rel="stylesheet" href="./styles.css">
   <script src="./script.js" defer></script>
 </head>
@@ -13,13 +14,13 @@
   <div class="content">
 
     <div class="side-bar">
-      <input type="color" id="color">
+      <input type="color" id="color" class="color">
       <button class="rainbow">Rainbow</button>
       <button class="eraser">Eraser</button>
       <button class="clear">Clear</button>
       <label for="range" class="range-label">16X16</label>
-      <input type="range" min="16" max="64" value="16" step="8" id="range">
-      <h2 class="mode">Mode: Color</h2>
+      <input type="range" min="16" max="64" value="16" step="8" id="range" class="range">
+      <p class="mode">Mode: Color</p>
     </div>
 
     <div class="main"></div>

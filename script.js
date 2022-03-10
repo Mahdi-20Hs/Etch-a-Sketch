@@ -8,36 +8,51 @@ const main = document.querySelector('.main');
 const mode = document.querySelector('.mode');
 
 let colorValue = color.value;
+let changingColor= false;
+let colors = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
+
+
+for(let i = 0; i <= (range.min * range.min); i++){
+  const i = document.createElement('div');
+  main.append(i)
+}
+
 
 color.addEventListener('change', function(){
   mode.textContent = 'Mode: Color'
   colorValue = color.value;
-  x = false
+  changingColor= false
 })
 
 eraser.addEventListener('click', function(){
   colorValue = '#FFFFFF';
   mode.textContent = 'Mode: Eraser'
-  x = false;
+  changingColor= false;
 })
 
-let x = false;
-let y = ['#9400D3', '#4B0082', '#0000FF', '#00FF00', '#FFFF00', '#FF7F00', '#FF0000'];
 
 rainbow.addEventListener('click', function() {
-  x =true;
+  changingColor=true;
   mode.textContent = 'Mode: Rainbow'
 })
 
 
 
-for(let i = 0; i <= (16 * 16); i++){
-  const i = document.createElement('div');
-  
-  main.append(i)
+function changeColor(){
+  const divs = main.querySelectorAll('div');
+  divs.forEach((div) => div.addEventListener('mouseover', function(){
+    if(changingColor === true){
+      colorValue = colors[Math.floor(Math.random() * 7)];
+    }
+    this.style.backgroundColor = colorValue;
+  }))
 
+  clear.addEventListener('click', function(){
+    divs.forEach((div) => div.style.backgroundColor = '#FFFFFF')
+  })
 }
 
+changeColor()
 
 range.addEventListener('change', function(){
   main.innerHTML = '';
@@ -52,30 +67,6 @@ range.addEventListener('change', function(){
     main.append(i)
   }
 
-  const divs = main.querySelectorAll('div');
-
-divs.forEach((div) => div.addEventListener('mouseover', function(){
-  if(x === true){
-    colorValue = y[Math.floor(Math.random() * 7)];
-  }
-  this.style.backgroundColor = colorValue;
-
-}))
-clear.addEventListener('click', function(){
-  divs.forEach((div) => div.style.backgroundColor = '#FFFFFF')
-})
+  changeColor()
 })
 
-const divs = main.querySelectorAll('div');
-
-divs.forEach((div) => div.addEventListener('mouseover', function(){
-  if(x === true){
-    colorValue = y[Math.floor(Math.random() * 7)];
-  }
-  this.style.backgroundColor = colorValue;
-
-}))
-
-clear.addEventListener('click', function(){
-  divs.forEach((div) => div.style.backgroundColor = '#FFFFFF')
-})
