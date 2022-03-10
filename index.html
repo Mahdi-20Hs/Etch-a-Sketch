@@ -9,9 +9,19 @@
 <body>
   <h1>Etch-a-Sketch</h1>
   <div class="main">
-    <div class="side-bar"></div>
+
+    <div class="side-bar">
+      <input type="color">
+      <button class="rainbow">Rainbow</button>
+      <button class="eraser">Eraser</button>
+      <button class="clear">Clear</button>
+      <label for="range" class="range-label">16X16</label>
+      <input type="range" min="16" max="64" step="8" id="range">
+    </div>
+
     <div class="container"></div>
   </div>
+  
   <div class="footer"></div>
 </body>
 </html>
