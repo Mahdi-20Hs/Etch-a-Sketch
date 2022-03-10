@@ -11,6 +11,7 @@ body{
   gap: 20px;
   align-items: center;
   height: 600px;
+  background-color: aquamarine;
 }
 
 h1{
@@ -40,8 +41,12 @@ h1{
   text-align: center;
 }
 
+.side-bar h2{
+  text-align: center;
+}
+
 .main{
-  background-color: coral;
+  background-color: white;
   width: 500px;
   height: 500px;
   border-radius: 10px;
